@@ -163,3 +163,7 @@ cython_debug/
 
 # Visual Studio Code
 .vscode/
+
+# code runner
+
+.code-workspace
