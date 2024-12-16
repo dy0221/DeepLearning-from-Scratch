@@ -2,7 +2,7 @@
 
 ## conda 가상환경으로 code runner를 실행하는 방법
 
-### https://github.com/WegraLee/deep-learning-from-scratch/blob/master/dataset/mnist.py
+### https://github.com/WegraLee/deep-learning-from-scratch/tree/master
 
 왼쪽 위에 File에 Save Workspace As를 눌러서 .code-workspace파일을 만든다.
 
