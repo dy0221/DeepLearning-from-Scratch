@@ -1,8 +1,14 @@
 # DeepLearning-from-Scratch
 
-## conda 가상환경으로 code runner를 실행하는 방법
+## 밑바닥부터 시작하는 딥러닝 github 주소
 
 ### https://github.com/WegraLee/deep-learning-from-scratch/tree/master
+
+## 손글씨 이미지 추론
+
+![추론이미지](inference_result_image.png)
+
+## conda 가상환경으로 code runner를 실행하는 방법
 
 왼쪽 위에 File에 Save Workspace As를 눌러서 .code-workspace파일을 만든다.
 
