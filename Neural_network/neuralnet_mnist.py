@@ -46,24 +46,30 @@ if __name__=='__main__':
     batch_size = 100
     accuracy_cnt = 0
     accuracy_cnt2 = 0
+    print(x.shape)
+    cnt = 0
     time_start = time.time()
     for i in range(len(x)):
         y = neuralnet_mnist.predict(x[i])
         p = np.argmax(y)
         if p == t[i]:
             accuracy_cnt += 1
+        cnt += 1
     during_time = time.time() - time_start
-
+    print("cnt : ",cnt)
     print("time without batch : ", during_time)
     print("Accuracy:" ,str(float(accuracy_cnt) / len(x)))
 
+    cnt = 0
     time_start = time.time()
     for i in range(0, len(x), batch_size):
         x_batch = x[i:i+batch_size]
         y_batch = neuralnet_mnist.predict(x_batch)
         p = np.argmax(y_batch, axis=1)
         accuracy_cnt2 += np.sum(p == t[i:i+batch_size])
+        cnt += 1
     during_time = time.time() - time_start
 
+    print("cnt : ",cnt)
     print("time with batch :    ", during_time)
     print("Accuracy with batch:" ,str(float(accuracy_cnt) / len(x)))
