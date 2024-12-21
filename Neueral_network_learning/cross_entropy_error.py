@@ -1,6 +1,7 @@
 import numpy as np
 
 def cross_entropy_error(y, t):
+    # 데이터가 1차원일 경우 통일성을 위해 2차원으로 만듦
     if y.ndim == 1:
         t = t.reshape(1, t.size)
         y = y.reshape(1, y.size)
@@ -9,11 +10,8 @@ def cross_entropy_error(y, t):
     if t.size == y.size:
         t = t.argmax(axis=1)
 
-    # if t.dtype != int:  # 정수형으로 변환
-    #     t = t.astype(int)
-             
     batch_size = y.shape[0]
-    return -np.sum(np.log(y[np.arange(batch_size), t] + 1e-7)) / batch_size # t가 float64여서 에러 발생 << int 형으로
+    return -np.sum(np.log(y[np.arange(batch_size), t] + 1e-7)) / batch_size 
 
 if __name__=='__main__':
     t = [0, 0 , 1, 0 , 0, 0, 0, 0, 0, 0]
