@@ -4,16 +4,8 @@ sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 import numpy as np
 from dataset.mnist import load_mnist
 from Neural_network.neuralnet_mnist import NEURALNET_MNIST
-
-(x_train, t_train), (x_test, t_test) = load_mnist(normalize=False, one_hot_label=True)
-
-def cross_entropy_error(y,t):
-    if y.ndim == 1:
-        t = t.reshape(1,t.size)
-        y = y.reshape(1, y.size)
-
-    batch_size = y.shape[0]
-    return -np.sum(t*np.log(y)) / batch_size
+from Neueral_network_learning.cross_entropy_error import cross_entropy_error
+(x_train, t_train), (x_test, t_test) = load_mnist(normalize=True, one_hot_label=True)
 
 train_size = x_train.shape[0]
 batch_size = 10
